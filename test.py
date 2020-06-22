@@ -1,4 +1,5 @@
 from main import parse
+
 def test():
     obj_parens = {
         'type': 'node',
@@ -116,6 +117,8 @@ def test():
     assert parse('Пол="М" AND (Возраст>25 OR Стаж>.5)') == obj_parens
     assert parse('Пол="М" AND (Возраст>25 OR (Стаж>.5 AND Должность!="Руководитель"))') == obj_double_parens
     assert parse('Пол="М" AND (Возраст>25)') == obj_additional_parens
+    assert parse('Пол="М" AND Возраст>25 OR Стаж>.5') == obj_simple
+
     assert parse('Пол="М"') == obj_one
 
     try:
