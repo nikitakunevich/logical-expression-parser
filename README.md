@@ -11,6 +11,7 @@ To get dict with AST (abstract syntax tree) use function `parse` from module `ma
 ```python
 from main import parse
 print(parse('Стаж>.5 AND Должность!="Руководитель"'))
+```
 
 OR 
 
